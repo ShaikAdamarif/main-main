@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="t9Fny9BJtmodV0x_i6eRSIQfVTmpjVZ-ZfOTlIgpwP0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AV PROP MISSION</title>
+<link rel="icon" href="logo.jpeg" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<canvas id="bgNet"></canvas>
+<canvas id="touchNet"></canvas>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="logo.jpeg" alt="AV PROP MISSION" />
+    <h1>AV PROP MISSION</h1>
+  </div>
+  <nav id="topNav">
+    <button class="navbtn" data-view="home">Home</button>
+    <button class="navbtn" data-view="contact">Contact</button>
+    <button class="navbtn" data-view="services">Services</button>
+    <button class="navbtn" data-view="portfolio">Portfolio</button>
+  </nav>
+</header>
+
+<main id="app"></main>
+
+<!-- Modal -->
+<div id="modal" class="modal-backdrop hidden">
+  <div class="modal-card animate-pop">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast hidden"></div>
+
+<!-- Excel + PDF export libs (for Attendance Records) -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<!-- Face recognition (eyes/nose landmarks + descriptor for matching) -->
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+<script src="cloud.js"></script>
+<script src="touch-net.js"></script>
+<script src="app.js"></script>
+<script src="manager.js"></script>
+</body>
+</html>

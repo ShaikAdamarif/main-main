@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: avprop-mission
+    env: node
+    plan: free
+    nodeVersion: 20.18.0
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1

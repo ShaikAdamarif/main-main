@@ -1,0 +1,17 @@
+{
+  "name": "avprop-mission-server",
+  "version": "1.0.1",
+  "description": "AV Prop Mission - Render + Neon PostgreSQL deployment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.16.0",
+    "dotenv": "^16.5.0"
+  }
+}
