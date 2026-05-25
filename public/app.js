@@ -346,327 +346,82 @@ views.home = () => {
       <div class="input-group"><label>Message</label><textarea id="cb_msg" rows="3"></textarea></div>
       <button class="btn" onclick="window._av.submitCallback()">Submit Callback</button>
     </div>
-    <h2 class="section-title" style="margin-top:36px">Successful Process, Successful Project</h2>
-/* =========================
-   ULTRA PREMIUM PROCESS FLOW
-========================= */
-
-.ultra-process-section{
-  position:relative;
-  overflow:hidden;
-
-  margin:40px auto;
-  padding:70px 30px;
-
-  border-radius:30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f7fbff 0%,
-      #edf5ff 100%
-    );
-
-  box-shadow:
-    0 20px 60px rgba(0,76,170,.08);
-
-}
-
-/* Animated Background Shapes */
-
-.bg-shape{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(50px);
-  opacity:.25;
-  animation:floatShape 12s infinite alternate ease-in-out;
-}
-
-.shape1{
-  width:260px;
-  height:260px;
-  background:#00bfff;
-  top:-80px;
-  left:-60px;
-}
-
-.shape2{
-  width:220px;
-  height:220px;
-  background:#0066ff;
-  right:-40px;
-  top:40%;
-}
-
-.shape3{
-  width:180px;
-  height:180px;
-  background:#7dd3fc;
-  bottom:-50px;
-  left:40%;
-}
-
-@keyframes floatShape{
-  0%{
-    transform:
-      translateY(0px)
-      translateX(0px);
-  }
-
-  100%{
-    transform:
-      translateY(-40px)
-      translateX(20px);
-  }
-}
-
-/* Titles */
-
-.process-main-title{
-  position:relative;
-  z-index:2;
-
-  text-align:center;
-  font-size:42px;
-  font-weight:800;
-  color:#0b3d91;
-  margin-bottom:10px;
-}
-
-.process-subtitle{
-  position:relative;
-  z-index:2;
-
-  text-align:center;
-  color:#4b6b9c;
-  font-size:18px;
-  margin-bottom:50px;
-}
-
-/* Flow */
-
-.process-flow{
-  position:relative;
-  z-index:2;
+<section class="modern-process-section">
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:20px;
-}
+<h2 class="modern-title">
+  Your Dream Home Journey
+</h2>
 
-/* Cards */
+<p class="modern-subtitle">
+  Premium Property Buying Experience
+</p>
 
-.pf-card{
-  position:relative;
+<div class="modern-process-grid">
 
-  width:190px;
-  height:240px;
+${[
+  [
+    'https://images.unsplash.com/photo-1521791136064-7986c2920216',
+    'Meet Our Experts'
+  ],
 
-  border-radius:28px;
+  [
+    'https://images.unsplash.com/photo-1560518883-ce09059eeffa',
+    'Select Best Property'
+  ],
 
-  background:
-    rgba(255,255,255,.75);
+  [
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
+    'Visit Premium Projects'
+  ],
 
-  backdrop-filter:blur(16px);
+  [
+    'https://images.unsplash.com/photo-1554224155-6726b3ff858f',
+    'Loan & Documentation'
+  ],
 
-  border:
-    1px solid rgba(255,255,255,.8);
+  [
+    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85',
+    'Get Dream Home'
+  ],
 
-  overflow:hidden;
+  [
+    'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a',
+    '24/7 Customer Support'
+  ]
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+].map(card => `
 
-  transition:
-    transform .4s ease,
-    box-shadow .4s ease;
+<div class="modern-card">
 
-  box-shadow:
-    0 12px 35px rgba(0,89,190,.12);
-}
+  <div class="card-image">
+    <img src="${card[0]}" alt="">
+  </div>
 
-/* Glowing animation */
+  <div class="card-overlay"></div>
 
-.card-glow{
-  position:absolute;
-  inset:-50%;
+  <div class="card-content">
 
-  background:
-    linear-gradient(
-      120deg,
-      transparent,
-      rgba(255,255,255,.9),
-      transparent
-    );
+    <div class="card-number">
+      ★
+    </div>
 
-  transform:rotate(25deg);
+    <h3>
+      ${card[1]}
+    </h3>
 
-  animation:shineMove 4s linear infinite;
-}
+  </div>
 
-@keyframes shineMove{
-  0%{
-    transform:
-      translateX(-120%)
-      rotate(25deg);
-  }
+</div>
 
-  100%{
-    transform:
-      translateX(220%)
-      rotate(25deg);
-  }
-}
+`).join('')}
 
-/* Hover */
+</div>
 
-.pf-card:hover{
-  transform:
-    translateY(-12px)
-    scale(1.04);
+</section>
 
-  box-shadow:
-    0 20px 50px rgba(0,102,255,.28),
-    0 0 30px rgba(0,180,255,.22);
-}
-
-/* Icon */
-
-.pf-icon{
-  position:relative;
-  z-index:2;
-
-  width:90px;
-  height:90px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:42px;
-
-  color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #00a6ff,
-      #0059ff
-    );
-
-  box-shadow:
-    0 8px 30px rgba(0,102,255,.35);
-
-  animation:floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon{
-  0%,100%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-8px);
-  }
-}
-
-/* Text */
-
-.pf-title{
-  position:relative;
-  z-index:2;
-
-  margin-top:22px;
-
-  font-size:17px;
-  font-weight:700;
-  color:#083b7a;
-  text-align:center;
-}
-
-/* Animated Line */
-
-.pf-line{
-  position:absolute;
-  bottom:0;
-  left:0;
-
-  width:100%;
-  height:5px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #00c6ff,
-      #0072ff,
-      #00c6ff
-    );
-
-  background-size:300% 100%;
-
-  animation:lineMove 3s linear infinite;
-}
-
-@keyframes lineMove{
-  0%{
-    background-position:0%;
-  }
-
-  100%{
-    background-position:300%;
-  }
-}
-
-/* Arrows */
-
-.flow-arrow{
-  font-size:38px;
-  color:#008cff;
-  font-weight:900;
-
-  animation:arrowFloat 1.5s infinite ease-in-out;
-}
-
-@keyframes arrowFloat{
-  0%,100%{
-    transform:translateX(0px);
-    opacity:.7;
-  }
-
-  50%{
-    transform:translateX(10px);
-    opacity:1;
-  }
-}
-
-/* Mobile */
-
-@media(max-width:900px){
-
-  .process-flow{
-    flex-direction:column;
-  }
-
-  .flow-arrow{
-    transform:rotate(90deg);
-  }
-
-  .pf-card{
-    width:90%;
-    max-width:320px;
-  }
-
-  .process-main-title{
-    font-size:30px;
-  }
-
-}
+<h2 class="section-title" style="margin-top:40px">
+  Our Company Projects
+</h2>
       ${company.map(p=>`<div class="card" ${p.url?`onclick="window.open('${p.url}','_blank')" style="cursor:pointer"`:''}><img src="${p.img}" style="width:100%;border-radius:10px;margin-bottom:8px"/><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div>`).join('')}
     </div>
 
