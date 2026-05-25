@@ -347,7 +347,26 @@ views.home = () => {
       <button class="btn" onclick="window._av.submitCallback()">Submit Callback</button>
     </div>
 
-    <h2 class="section-title" style="margin-top:30px">Our Company Projects</h2>
+    <h2 class="section-title" style="margin-top:36px">Successful Process, Successful Project</h2>
+<p class="muted" style="text-align:center;margin-top:-6px">Journey to your Dream Home</p>
+<div class="process-flow">
+  ${[
+    ['🧑‍💼','Meet Our Expert'],
+    ['🏠','Select A Property'],
+    ['📍','Visit Property'],
+    ['💰','Loan Assistance'],
+    ['🔑','Get Your Dream Home'],
+    ['🎧','Customer Support']
+  ].map((s,i,a)=>`
+    <div class="pf-step">
+      <div class="pf-icon">${s[0]}</div>
+      <div class="pf-label">${s[1]}</div>
+    </div>
+    ${i<a.length-1?'<div class="pf-arrow">➜</div>':''}
+  `).join('')}
+</div>
+
+<h2 class="section-title" style="margin-top:30px">Our Company Projects</h2>
     <div class="grid cols-3">
       ${company.map(p=>`<div class="card" ${p.url?`onclick="window.open('${p.url}','_blank')" style="cursor:pointer"`:''}><img src="${p.img}" style="width:100%;border-radius:10px;margin-bottom:8px"/><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div>`).join('')}
     </div>
