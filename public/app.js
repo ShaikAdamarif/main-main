@@ -347,77 +347,96 @@ views.home = () => {
       <button class="btn" onclick="window._av.submitCallback()">Submit Callback</button>
     </div>
 <section class="modern-process-section">
-
-<h2 class="modern-title">
-  Your Dream Home Journey
+<h2 class="pro-flow-main-title">
+  SUCCESSFUL PROCESS, SUCCESSFUL PROJECT
 </h2>
 
-<p class="modern-subtitle">
-  Premium Property Buying Experience
-</p>
+<div class="pro-flow-subtitle">
+  Journey to Your Dream Home
+</div>
 
-<div class="modern-process-grid">
+<div class="pro-flow-wrapper">
 
-${[
-  [
-    'https://images.unsplash.com/photo-1521791136064-7986c2920216',
-    'Meet Our Experts'
-  ],
+  <div class="pro-flow-grid">
 
-  [
-    'https://images.unsplash.com/photo-1560518883-ce09059eeffa',
-    'Select Best Property'
-  ],
+    ${[
+      {
+        no:'01',
+        icon:'👨‍💼',
+        title:'MEET OUR EXPERT',
+        desc:'Connect with our property specialists'
+      },
+      {
+        no:'02',
+        icon:'🏠',
+        title:'SELECT A PROPERTY',
+        desc:'Choose from premium properties'
+      },
+      {
+        no:'03',
+        icon:'📍',
+        title:'VISIT PROPERTY',
+        desc:'Schedule and explore personally'
+      },
+      {
+        no:'04',
+        icon:'🛡️',
+        title:'LOAN ASSISTANCE',
+        desc:'Easy and secure home loans'
+      },
+      {
+        no:'05',
+        icon:'🔑',
+        title:'GET DREAM HOME',
+        desc:'Move into your dream property'
+      },
+      {
+        no:'06',
+        icon:'🎧',
+        title:'CUSTOMER SUPPORT',
+        desc:'24×7 support whenever needed'
+      }
 
-  [
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
-    'Visit Premium Projects'
-  ],
+    ].map((item,index,array)=>`
 
-  [
-    'https://images.unsplash.com/photo-1554224155-6726b3ff858f',
-    'Loan & Documentation'
-  ],
+      <div class="pro-step-card">
 
-  [
-    'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85',
-    'Get Dream Home'
-  ],
+        <div class="pro-step-number">
+          ${item.no}
+        </div>
 
-  [
-    'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a',
-    '24/7 Customer Support'
-  ]
+        <div class="pro-step-icon-wrap">
+          <div class="pro-step-icon">
+            ${item.icon}
+          </div>
+        </div>
 
-].map(card => `
+        <div class="pro-step-title">
+          ${item.title}
+        </div>
 
-<div class="modern-card">
+        <div class="pro-step-desc">
+          ${item.desc}
+        </div>
 
-  <div class="card-image">
-    <img src="${card[0]}" alt="">
-  </div>
+        <div class="pro-step-bottom-line"></div>
 
-  <div class="card-overlay"></div>
+      </div>
 
-  <div class="card-content">
+      ${index < array.length-1
+        ? `
+          <div class="pro-step-arrow">
+            »
+          </div>
+        `
+        : ''
+      }
 
-    <div class="card-number">
-      ★
-    </div>
-
-    <h3>
-      ${card[1]}
-    </h3>
+    `).join('')}
 
   </div>
 
 </div>
-
-`).join('')}
-
-</div>
-
-</section>
 
 <h2 class="section-title" style="margin-top:40px">
   Our Company Projects
