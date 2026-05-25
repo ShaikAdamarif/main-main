@@ -346,28 +346,327 @@ views.home = () => {
       <div class="input-group"><label>Message</label><textarea id="cb_msg" rows="3"></textarea></div>
       <button class="btn" onclick="window._av.submitCallback()">Submit Callback</button>
     </div>
-
     <h2 class="section-title" style="margin-top:36px">Successful Process, Successful Project</h2>
-<p class="muted" style="text-align:center;margin-top:-6px">Journey to your Dream Home</p>
-<div class="process-flow">
-  ${[
-    ['🧑‍💼','Meet Our Expert'],
-    ['🏠','Select A Property'],
-    ['📍','Visit Property'],
-    ['💰','Loan Assistance'],
-    ['🔑','Get Your Dream Home'],
-    ['🎧','Customer Support']
-  ].map((s,i,a)=>`
-    <div class="pf-step">
-      <div class="pf-icon">${s[0]}</div>
-      <div class="pf-label">${s[1]}</div>
-    </div>
-    ${i<a.length-1?'<div class="pf-arrow">➜</div>':''}
-  `).join('')}
-</div>
+/* =========================
+   ULTRA PREMIUM PROCESS FLOW
+========================= */
 
-<h2 class="section-title" style="margin-top:30px">Our Company Projects</h2>
-    <div class="grid cols-3">
+.ultra-process-section{
+  position:relative;
+  overflow:hidden;
+
+  margin:40px auto;
+  padding:70px 30px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7fbff 0%,
+      #edf5ff 100%
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0,76,170,.08);
+
+}
+
+/* Animated Background Shapes */
+
+.bg-shape{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(50px);
+  opacity:.25;
+  animation:floatShape 12s infinite alternate ease-in-out;
+}
+
+.shape1{
+  width:260px;
+  height:260px;
+  background:#00bfff;
+  top:-80px;
+  left:-60px;
+}
+
+.shape2{
+  width:220px;
+  height:220px;
+  background:#0066ff;
+  right:-40px;
+  top:40%;
+}
+
+.shape3{
+  width:180px;
+  height:180px;
+  background:#7dd3fc;
+  bottom:-50px;
+  left:40%;
+}
+
+@keyframes floatShape{
+  0%{
+    transform:
+      translateY(0px)
+      translateX(0px);
+  }
+
+  100%{
+    transform:
+      translateY(-40px)
+      translateX(20px);
+  }
+}
+
+/* Titles */
+
+.process-main-title{
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+  font-size:42px;
+  font-weight:800;
+  color:#0b3d91;
+  margin-bottom:10px;
+}
+
+.process-subtitle{
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+  color:#4b6b9c;
+  font-size:18px;
+  margin-bottom:50px;
+}
+
+/* Flow */
+
+.process-flow{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* Cards */
+
+.pf-card{
+  position:relative;
+
+  width:190px;
+  height:240px;
+
+  border-radius:28px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  backdrop-filter:blur(16px);
+
+  border:
+    1px solid rgba(255,255,255,.8);
+
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+  box-shadow:
+    0 12px 35px rgba(0,89,190,.12);
+}
+
+/* Glowing animation */
+
+.card-glow{
+  position:absolute;
+  inset:-50%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,.9),
+      transparent
+    );
+
+  transform:rotate(25deg);
+
+  animation:shineMove 4s linear infinite;
+}
+
+@keyframes shineMove{
+  0%{
+    transform:
+      translateX(-120%)
+      rotate(25deg);
+  }
+
+  100%{
+    transform:
+      translateX(220%)
+      rotate(25deg);
+  }
+}
+
+/* Hover */
+
+.pf-card:hover{
+  transform:
+    translateY(-12px)
+    scale(1.04);
+
+  box-shadow:
+    0 20px 50px rgba(0,102,255,.28),
+    0 0 30px rgba(0,180,255,.22);
+}
+
+/* Icon */
+
+.pf-icon{
+  position:relative;
+  z-index:2;
+
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:42px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00a6ff,
+      #0059ff
+    );
+
+  box-shadow:
+    0 8px 30px rgba(0,102,255,.35);
+
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+/* Text */
+
+.pf-title{
+  position:relative;
+  z-index:2;
+
+  margin-top:22px;
+
+  font-size:17px;
+  font-weight:700;
+  color:#083b7a;
+  text-align:center;
+}
+
+/* Animated Line */
+
+.pf-line{
+  position:absolute;
+  bottom:0;
+  left:0;
+
+  width:100%;
+  height:5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c6ff,
+      #0072ff,
+      #00c6ff
+    );
+
+  background-size:300% 100%;
+
+  animation:lineMove 3s linear infinite;
+}
+
+@keyframes lineMove{
+  0%{
+    background-position:0%;
+  }
+
+  100%{
+    background-position:300%;
+  }
+}
+
+/* Arrows */
+
+.flow-arrow{
+  font-size:38px;
+  color:#008cff;
+  font-weight:900;
+
+  animation:arrowFloat 1.5s infinite ease-in-out;
+}
+
+@keyframes arrowFloat{
+  0%,100%{
+    transform:translateX(0px);
+    opacity:.7;
+  }
+
+  50%{
+    transform:translateX(10px);
+    opacity:1;
+  }
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+  .process-flow{
+    flex-direction:column;
+  }
+
+  .flow-arrow{
+    transform:rotate(90deg);
+  }
+
+  .pf-card{
+    width:90%;
+    max-width:320px;
+  }
+
+  .process-main-title{
+    font-size:30px;
+  }
+
+}
       ${company.map(p=>`<div class="card" ${p.url?`onclick="window.open('${p.url}','_blank')" style="cursor:pointer"`:''}><img src="${p.img}" style="width:100%;border-radius:10px;margin-bottom:8px"/><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></div>`).join('')}
     </div>
 
